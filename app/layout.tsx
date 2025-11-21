@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.className} antialiased text-black bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100` }
+        className={`${satoshi.className} antialiased text-black text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100` }
       >
         <Header />
         <main>

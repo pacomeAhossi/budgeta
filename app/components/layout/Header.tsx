@@ -1,41 +1,12 @@
 import Logo from "../brand/Logo";
 import Navigation from "../headerLink/Navigation";
-import Button from "../Button";
+import Button from "../ui/Button";
 import MobileMenu from "./MobileMenu";
 
 
-// export default function Header(){
-//     return(
-//         <header className="relative  py-6 bg-black border-b border-budgeta-gray/20 rounded-tl-[35px] rounded-tr-[35px] h-[250px] overflow-hidden header-glow">
-//             {/* div pour l'image de fond avec rotation */}
-//             <div 
-//                 className="absolute inset-0 bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat transform rotate-x-180" 
-//                 style={{ transform: 'rotateX(180deg)', zIndex: 0 }}
-//             />
-            
-//             <div className="container mx-auto px-6 lg:px-16 relative z-10">
-//                 <div className="flex items-center justify-between h-20">
-//                     <Logo />
-
-//                     <div className="hidden lg:flex">
-//                         <Navigation />
-//                     </div>
-
-//                     <div className="hidden lg:block">
-//                         <Button href="/download" variant="primary">
-//                             Download
-//                         </Button>
-//                     </div>
-
-                    
-//                 </div>
-//             </div>
-//         </header>
-//     );
-// }
 export default function Header(){
     return(
-        <header className="relative py-6 bg-black border-b border-budgeta-gray/20 rounded-tl-[35px] rounded-tr-[35px] lg:h-[250px] overflow-hidden header-glow">
+        <header className="relative py-6 bg-black rounded-tl-[35px] rounded-tr-[35px] lg:h-[250px] overflow-hidden header-glow">
             {/* div pour l'image de fond avec rotation */}
             <div 
                 className="absolute inset-0 bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat transform rotate-x-180" 
