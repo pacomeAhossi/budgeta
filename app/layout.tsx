@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
+import Header from "./components/layout/Header";
 import { satoshi } from "./fonts";
 import "./globals.css";
-import Header from "./components/layout/Header";
-
 
 export const metadata: Metadata = {
   title: "Budgeta - Save Money Community",
@@ -17,12 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.className} antialiased text-black text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100` }
+        className={`${satoshi.className} antialiased text-black text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100`}
       >
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
