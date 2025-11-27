@@ -24,6 +24,7 @@ export default function Features() {
           ]}
           mockup={<CreditCardStack />}
           mockupPosition="right"
+          delay={0}
         />
 
         {/* Feature card pour liste de transactions */}
@@ -37,6 +38,7 @@ export default function Features() {
           ]}
           mockup={<TransactionList />}
           mockupPosition="left"
+          delay={200}
         />
       </div>
     </section>
