@@ -9,7 +9,7 @@ export default function Hero() {
   const phoneRef = useParallax({ speed: 0.3, disableOnMobile: true });
 
   return (
-    <section className="pb-32 lg:pb-40 border-[1px] border-[#98d269] ">
+    <section className="">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <h1 className="text-4xl md:text-5xl capitalize font-semibold leading-tight text-white">
@@ -39,10 +39,11 @@ export default function Hero() {
 
         {/* Phone Mockup */}
         <div
-          ref={phoneRef}
           className="mt-16 z-20 lg:mt-16 relative will-change-transform animate-slide-up"
           id="phone-mockup"
         >
+          {/* div pour l'image de fond avec rotation */}
+          {/* <div className="absolute w-full bottom-[50%] h-[200px] bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat" /> */}
           <PhoneMockup />
         </div>
       </div>

@@ -104,3 +104,91 @@ html {
 .animate-slide-up {
   animation: slide-up 0.8s ease-out;
 }
+
+/* SCROLL REVEAL ANIMATIONS */
+
+@layer utilities {
+  /* État initial : caché */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* État révélé : visible */
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Variantes d'animations */
+
+  /* Fade in simple (sans mouvement) */
+  .reveal-fade-hidden {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+  }
+
+  .reveal-fade-visible {
+    opacity: 1;
+  }
+
+  /* Slide from left */
+  .reveal-left-hidden {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-left-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Slide from right */
+  .reveal-right-hidden {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-right-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Scale up */
+  .reveal-scale-hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-scale-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Pour les animations plus rapides */
+  .reveal-fast {
+    transition-duration: 0.4s !important;
+  }
+
+  /* Pour les animations plus lentes */
+  .reveal-slow {
+    transition-duration: 0.8s !important;
+  }
+}
+
+/* Respect de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden,
+  .reveal-fade-hidden,
+  .reveal-left-hidden,
+  .reveal-right-hidden,
+  .reveal-scale-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

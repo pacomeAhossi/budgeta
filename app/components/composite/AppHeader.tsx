@@ -7,7 +7,7 @@ export default function AppHeader() {
       {/* Devise */}
       <div className="flex items-center gap-2 px-1 py-2 rounded-lg bg-white/10">
         <Image
-          src="/assets/usa.png"
+          src="/assets/images/usa.png"
           width={20}
           height={20}
           alt="logo budgeta"
