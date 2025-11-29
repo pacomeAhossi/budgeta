@@ -6,7 +6,7 @@ export default function PhoneFrame({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative w-full max-w-[280px] md:max-w[320px] mx-auto ">
+    <div className="relative w-full max-w-[280px] md:max-w-[393px] mx-auto ">
       {/* Cadre du téléphone avec bordure lumineuse */}
       <div
         className="relative rounded-[3rem] bg-gradient-to-br from-cyan-500/20 via-blue-500/20

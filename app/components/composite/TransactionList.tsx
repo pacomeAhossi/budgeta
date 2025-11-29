@@ -3,7 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { useScrollReveal } from "@/app/hooks/useScrollReveal";
 
-export default function TransactionList() {
+type TransactionListProps = {
+  variant?: "single" | "into-mockup";
+};
+
+export default function TransactionList({
+  variant = "into-mockup",
+}: TransactionListProps) {
   const transactions = [
     {
       label: "From BCA account",
@@ -40,10 +46,13 @@ export default function TransactionList() {
   //Animation du container principal
   const containerReveal = useScrollReveal({ threshold: 0.1, delay: 0 });
 
+  // Classes conditionnelles selon le variant
+  const containerClasses = variant === "single" ? "rounded-2xl shadow-xl" : "";
+
   return (
     <div
       ref={containerReveal.elementRef as any}
-      className={` bg-white rounded-2xl shadow-xl px-6 pt-6 max-w-full h-full ${
+      className={` bg-white ${containerClasses} px-6 pt-6 max-w-full h-full ${
         containerReveal.isVisible ? "reveal-visible" : "reveal-hidden"
       } `}
     >
@@ -77,19 +86,21 @@ export default function TransactionList() {
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-10 h-10 bg-gray/100 rounded-lg flex items-center justify-center ${
-                      transactionReveal.isVisible ? "icon-pulse" : ""
+                      transactionReveal.isVisible
+                        ? "anim-icon-pulse"
+                        : "icon-hidden"
                     } `}
                   >
                     {transaction_item.type === "credit" ? (
                       <Image
-                        src="/assets/images/credit-card-down.svg"
+                        src="/assets/icons/credit-card-down.svg"
                         width={40}
                         height={40}
                         alt="Credit card down icon"
                       />
                     ) : (
                       <Image
-                        src="/assets/images/credit-card-up.svg"
+                        src="/assets/icons/credit-card-up.svg"
                         width={40}
                         height={40}
                         alt="Credit card up icon"
@@ -97,10 +108,10 @@ export default function TransactionList() {
                     )}
                   </div>
                   <div>
-                    <p className="text-[8px] md:text-sm font-semibold text-black">
+                    <p className="text-[10px] md:text-sm font-semibold text-black">
                       {transaction_item.label}
                     </p>
-                    <p className="text-[8px] md:text-xs text-gray/500">
+                    <p className="text-[10px] md:text-xs text-gray/500">
                       {transaction_item.sublabel}
                     </p>
                   </div>

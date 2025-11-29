@@ -2,9 +2,10 @@ import FeaturesHeader from "../components/composite/FeaturesHeader";
 import FeatureCard from "../components/composite/FeatureCard";
 import CreditCardStack from "../components/composite/CreditCardStack";
 import TransactionList from "../components/composite/TransactionList";
+import PhoneMockup from "../components/composite/PhoneMockup";
 export default function Features() {
   return (
-    <section className="relative z-30 bg-white rounded-t-[3rem] -mt-32 lg:-mt-40 pt-20 pb-20 lg:pb-32">
+    <section className="relative z-30 bg-white -mt-32 lg:-mt-40  rounded-t-[3rem] pt-20 pb-20 ">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Header */}
         <FeaturesHeader
@@ -36,9 +37,23 @@ export default function Features() {
             "Categorize expenses for easier understanding",
             "Support for importing transaction data from bank accounts or digital wallets",
           ]}
-          mockup={<TransactionList />}
+          mockup={<TransactionList variant="single" />}
           mockupPosition="left"
           delay={200}
+        />
+
+        {/* Feature card pour Multi-currency Support */}
+        <FeatureCard
+          title="Multi-currency support"
+          description="The Multi-Currency Support feature allows you to manage your finances in multiple currencies. If fou often travel or transact with people overseas, this feature is extremely useful."
+          bulletPoints={[
+            "Support for various international currencies",
+            "Automatic conversion of transactions based on current exchange rates",
+            "Ideal for those who frenquently transact in foreign currencies",
+          ]}
+          mockup={<PhoneMockup />}
+          mockupPosition="right"
+          delay={400}
         />
       </div>
     </section>
