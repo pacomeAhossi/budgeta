@@ -29,7 +29,7 @@ export default function FeatureCard({
     >
       {/* Grid adaptatif selon la position du mockup */}
       <div
-        className={`flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center
+        className={`flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-12 items-center
           ${mockupPosition === "right" ? "" : "lg:grid-flow-dense"}  `}
       >
         <div
