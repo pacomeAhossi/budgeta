@@ -167,21 +167,8 @@ html {
   .reveal-slow {
     transition-duration: 0.8s !important;
   }
-}
 
-/* Respect de prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  .reveal-hidden,
-  .reveal-fade-hidden,
-  .reveal-left-hidden,
-  .reveal-right-hidden,
-  .reveal-scale-hidden {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  /* Pulse subtle pour les icônes */
+  /* Pulse subtile pour les icônes */
   .icon-hidden {
     opacity: 0;
     transform: scale(0.5);
@@ -202,5 +189,37 @@ html {
       transform: scale(1);
       opacity: 1;
     }
+  }
+
+  /* Animation scroll pour les reviews */
+  @keyframes scrollLeftPx {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-1 * var(--animation-distance, 1000px)));
+    }
+  }
+
+  @keyframes scrollRightPx {
+    from {
+      transform: translateX(calc(-1 * var(--animation-distance, 1000px)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Respect de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden,
+  .reveal-fade-hidden,
+  .reveal-left-hidden,
+  .reveal-right-hidden,
+  .reveal-scale-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
