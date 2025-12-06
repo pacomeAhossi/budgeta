@@ -1,4 +1,5 @@
-import Download from "./sections/Download";
+import DownloadSection from "./sections/DownloadSection";
+import Download from "./sections/DownloadSection";
 import Features from "./sections/Features";
 import Hero from "./sections/Hero";
 import Reviews from "./sections/Reviews";
@@ -11,7 +12,7 @@ export default function Home() {
       <Features />
       <Revolutionize />
       <Reviews />
-      <Download />
+      <DownloadSection />
     </main>
   );
 }

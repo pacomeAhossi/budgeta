@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ReactNode } from "react";
+import DownloadButtons from "../ui/DownloadButtons";
 
 type DownloadHeaderProps = {
   badge: string;
@@ -25,6 +26,8 @@ export default function DownloadHeader({
       <p className="text-sm lg:text-xl text-budgeta-gray font-medium leading-relaxed">
         {description}
       </p>
+      {/* Les deux boutons download  */}
+      <DownloadButtons />
     </div>
   );
 }
