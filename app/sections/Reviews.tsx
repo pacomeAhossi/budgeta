@@ -58,7 +58,7 @@ export default function Reviews() {
       </div>
 
       {/* Infinite scroll reviews */}
-      <div className="pt-7 lg:pt-14 space-y-6 lg:space-y-10">
+      <div className="pt-7 lg:pt-14 space-y-6 lg:space-y-10 mb-[3rem] lg:mb-[4rem]">
         <InfiniteScrollReviews reviews={reviewsRow1} direction="left" />
         <InfiniteScrollReviews reviews={reviewsRow2} direction="right" />
       </div>

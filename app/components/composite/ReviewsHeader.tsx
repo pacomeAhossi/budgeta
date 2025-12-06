@@ -35,7 +35,7 @@ export default function ReviewsHeader({
       </h2>
       <p
         ref={descriptionReveal.elementRef as any}
-        className={`text-[0.625] lg:text-xl font-medium text-budgeta-gray ${
+        className={`text-[0.625rem] lg:text-xl font-medium text-budgeta-gray ${
           descriptionReveal.isVisible
             ? "reveal-scale-visible reveal-slow"
             : "reveal-scale-hidden"
