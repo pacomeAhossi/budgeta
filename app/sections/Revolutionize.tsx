@@ -49,7 +49,7 @@ export default function Revolutionize() {
         />
 
         {/* Grid pour comparaison */}
-        <div className="mt-10 lg:mt-16 flex flex-col lg:flex-row gap-5 lg:gap-10 justify-center items-center lg:items-start">
+        <div className="mt-10 lg:mt-16 flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center md:items-start">
           <ComparisonCard
             title="Before using budgeta"
             items={beforeItems}

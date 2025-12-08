@@ -25,7 +25,7 @@ export default function ComparisonCard({
 
   return (
     <div
-      className={`${bgColor} p-[40px] rounded-[20px] lg:w-[500px] border-[1px] ${borderColor}`}
+      className={`${bgColor} p-[40px] rounded-[20px] w-full lg:w-[500px] border-[1px] ${borderColor}`}
     >
       <h3
         className={`${textColor} text-base lg:text-[2rem] capitalize font-bold mb-[20px] lg:mb-[40px] `}

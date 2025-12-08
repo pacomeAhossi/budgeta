@@ -1,11 +1,18 @@
+import { useScrollReveal } from "@/app/hooks/useScrollReveal";
 import { FaApple, FaGoogle } from "react-icons/fa";
 
 export default function DownloadButtons() {
+  const buttonsReveal = useScrollReveal({ threshold: 0.2, delay: 300 });
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4">
+    <div
+      ref={buttonsReveal.elementRef as any}
+      className={`flex flex-wrap items-center justify-center gap-4 ${
+        buttonsReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
+      }`}
+    >
       <a
         href="#"
-        className="inline-flex items-center gap-2 py-[0.5rem] px-[0.75rem] lg:py-4 lg:px-6 text-sm lg:text-xl text-black bg-white capitalize rounded-full transition-all duration-200 hover:bg-gray-100 hover:scale-105 "
+        className={`inline-flex items-center gap-2 py-[0.5rem] px-[0.75rem] lg:py-4 lg:px-6 text-sm lg:text-xl text-black bg-white capitalize rounded-full transition-all duration-200 hover:bg-gray-100 hover:scale-105 `}
       >
         <FaApple size={24} color="black" />
         <span>App store</span>

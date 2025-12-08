@@ -1,6 +1,7 @@
 "use client";
 
 import DownloadHeader from "../components/composite/DownloadHeader";
+import PhonesStack from "../components/composite/PhoneStack";
 
 export default function DownloadSection() {
   return (
@@ -16,6 +17,9 @@ export default function DownloadSection() {
           }
           description="Download Budgeta now and start managing your money like a pro!"
         />
+        <div className="hidden lg:flex relative w-full h-[500px] lg:h-[650px] mt-8">
+          <PhonesStack />
+        </div>
       </div>
     </section>
   );
