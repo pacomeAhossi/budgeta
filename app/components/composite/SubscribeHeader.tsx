@@ -14,7 +14,7 @@ export default function SubscribeHeader({
       <h2 className="text-white text-[1.5rem] lg:text-[3.5rem] font-bold">
         {title}
       </h2>
-      <p className="text-sm lg:text-[1.25rem] text-budgeta-gray font-medium leading-tight border border-red-500">
+      <p className="text-sm lg:text-[1.25rem] text-budgeta-gray font-medium leading-tight">
         {description}
       </p>
     </div>

@@ -1,3 +1,4 @@
+import FooterNav from "../components/composite/FooterNav";
 import SubscribeHeader from "../components/composite/SubscribeHeader";
 
 export default function SubscribeSection() {
@@ -8,6 +9,7 @@ export default function SubscribeSection() {
           title="Subscribe to the newsletter"
           description="Get the latest updates, tips and exclusive offers straight to your inbox. Stay informed and manage your finances smarter with Budgeta!"
         />
+        <FooterNav />
       </div>
     </section>
   );

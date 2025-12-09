@@ -6,7 +6,7 @@ export default function DownloadButtons() {
   return (
     <div
       ref={buttonsReveal.elementRef as any}
-      className={`flex flex-wrap items-center justify-center gap-4 ${
+      className={`flex flex-wrap items-center justify-center gap-4 pt-4 lg:pt-0 ${
         buttonsReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
       }`}
     >
