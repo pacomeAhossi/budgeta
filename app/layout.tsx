@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "./components/layout/Header";
 import { satoshi } from "./fonts";
 import "./globals.css";
+import FooterSection from "./sections/FooterSection";
 
 export const metadata: Metadata = {
   title: "Budgeta - Save Money Community",
@@ -20,6 +21,7 @@ export default function RootLayout({
       >
         <Header />
         <main>{children}</main>
+        <FooterSection />
       </body>
     </html>
   );

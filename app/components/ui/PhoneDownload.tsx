@@ -4,47 +4,6 @@ type PhoneDownloadProps = {
   variant: "dashboard" | "success";
 };
 
-// export default function PhoneDownload({ variant }: PhoneDownloadProps) {
-//   return (
-//     <div className="relative w-[260px] md:w-[300px] lg:w-[320px]  border border-green">
-//       {/* Cadre du téléphone */}
-//       <div
-//         className="
-//         relative rounded-[2.5rem]
-//         bg-gradient-to-br from-gray-700/20 via-gray-600/20 to-gray-700/20
-//         p-[2px]
-//         shadow-2xl
-//       "
-//       >
-//         {/* Fond du téléphone */}
-//         <div className="relative rounded-[2.4rem] bg-black overflow-hidden aspect-[9/19.5] p-4">
-//           {/* Dynamic Island */}
-//           <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
-//             <div className="w-28 h-6 bg-black rounded-b-3xl" />
-//           </div>
-
-//           {/* Screenshot de l'interface */}
-//           <div className="relative z-10 w-full h-full p-4">
-//             <Image
-//               src={
-//                 variant === "dashboard"
-//                   ? "/assets/avatar/dashboard-screen.png"
-//                   : "/assets/avatar/Screen.png"
-//               }
-//               alt={
-//                 variant === "dashboard" ? "Dashboard" : "Transaction Success"
-//               }
-//               fill
-//               className="object-cover rounded-[2rem]"
-//               priority
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 export default function PhoneDownload({ variant }: PhoneDownloadProps) {
   return (
     <div className="relative w-[240px] md:w-[280px]">
