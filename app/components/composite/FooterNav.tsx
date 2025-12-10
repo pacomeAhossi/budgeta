@@ -52,7 +52,7 @@ export default function FooterNav() {
     }
   };
   return (
-    <nav className="mt-16 lg:mt-20  ">
+    <nav className="my-10 lg:my-20  ">
       <ul className="flex flex-wrap items-center justify-center gap-x-4 lg:gap-[2.5rem]">
         {navLinks.map((nav_link, index, array) => {
           // On vérifie si le state activeSection est égale au lien actuel sur lequel on map

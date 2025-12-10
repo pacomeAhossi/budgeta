@@ -30,8 +30,10 @@ body {
   color: var(--foreground);
 }
 
-html {
-  @apply scroll-smooth;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
 }
 
 .header-glow {
