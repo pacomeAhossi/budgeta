@@ -23,7 +23,7 @@ export default function Header() {
 
           {/* Bouton Desktop - caché sur mobile */}
           <div className="hidden lg:block">
-            <Button href="/download" variant="primary">
+            <Button href="#download" variant="primary">
               Download
             </Button>
           </div>

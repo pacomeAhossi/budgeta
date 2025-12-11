@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 // Type pour les items de navigation
 type NavItem = {
@@ -11,19 +10,69 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Features", href: "/features" },
-  { label: "Revolutionize", href: "/revolutionize" },
-  { label: "Reviews", href: "/reviews" },
+  { label: "Features", href: "#features" },
+  { label: "Revolutionize", href: "#revolutionize" },
+  { label: "Reviews", href: "#reviews" },
 ];
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("");
 
-  // useEffect pour fermer le menu quand on change de page
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    // Fonction pour pour détecter la section active
+    const handleScroll = () => {
+      const sections = navItems.map((item) => item.href.replace("#", ""));
+
+      for (const sectionId in sections) {
+        const element = document.getElementById(sectionId);
+
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Si la section est visible dans les 300px du top du viewport,
+          // on le déclare comme active en modifiant le state à cette valeur de section
+          if (rect.top <= 300 && rect.bottom >= 300) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    // Exécution initiale de la fonction
+    handleScroll();
+
+    // Exécution de la fonction au scroll pour détecter l'élément visible
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Fonction pour le scroll vers la section spécifique au clic sur un menu
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      // Hauteur du header pour ajuster le scroll
+      //   On sustrait la hauteur du header pour que le début de la section reste visible
+      const headerHeight = 250;
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+
+      // Fermer le menu après le clic
+      setIsOpen(false);
+    }
+  };
 
   // useEffect pour bloquer le scroll du body quand le menu est ouvert
   useEffect(() => {
@@ -89,23 +138,24 @@ export default function MobileMenu() {
           <nav className="flex-1">
             <ul className="space-y-6">
               {navItems.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = activeSection === item.href.replace("#", "");
 
                 return (
                   <li key={item.href}>
-                    <Link
+                    <a
                       href={item.href}
+                      onClick={(e) => handleClick(e, item.href)}
                       className={`
-                                block text-lg font-medium transition-colors duration-200
-                                ${
-                                  isActive
-                                    ? "text-budgeta-green"
-                                    : "text-white hover:text-budgeta-green"
-                                }
-                        `}
+                        block text-lg font-medium transition-colors duration-200
+                        ${
+                          isActive
+                            ? "text-budgeta-green"
+                            : "text-white hover:text-budgeta-green"
+                        }
+                      `}
                     >
                       {item.label}
-                    </Link>
+                    </a>
                   </li>
                 );
               })}
@@ -113,14 +163,15 @@ export default function MobileMenu() {
           </nav>
 
           <div className="pb-8">
-            <Link
-              href="/download"
+            <a
+              href="#download"
+              onClick={(e) => handleClick(e, "#download")}
               className="block w-full text-center bg-budgeta-green text-budgeta-dark px-6 py-3 rounded-lg font-semibold
-                        transition-all duration-200
-                        hover:bg-budgeta-green/90 "
+                transition-all duration-200
+                hover:bg-budgeta-green/90 "
             >
               Download
-            </Link>
+            </a>
           </div>
         </div>
       </div>
