@@ -37,7 +37,7 @@ body {
 }
 
 .header-glow {
-  position: relative;
+  position: fixed;
   overflow: hidden;
 }
 

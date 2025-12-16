@@ -1,5 +1,6 @@
 "use client";
 
+import { log } from "console";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -13,9 +14,7 @@ const navItems: NavItem[] = [
   { label: "Revolutionize", href: "#revolutionize" },
   { label: "Reviews", href: "#reviews" },
 ];
-export default function () {
-  // const pathname = usePathname();
-  // console.log(pathname);
+export default function Navigation() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -23,14 +22,16 @@ export default function () {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.replace("#", ""));
 
-      for (const sectionId in sections) {
+      for (const sectionId of sections) {
+        console.log(sectionId);
+
         const element = document.getElementById(sectionId);
 
         if (element) {
           const rect = element.getBoundingClientRect();
           // Si la section est visible dans les 300px du top du viewport,
           // on le déclare comme active en modifiant le state à cette valeur de section
-          if (rect.top <= 300 && rect.bottom >= 300) {
+          if (rect.top <= 150 && rect.bottom >= 150) {
             setActiveSection(sectionId);
             break;
           }

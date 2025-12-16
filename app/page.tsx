@@ -8,7 +8,7 @@ import SubscribeSection from "./sections/SubscribeSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative pt-[120px] lg:pt-[250px] ">
       <div id="hero">
         <Hero />
       </div>

@@ -12,7 +12,9 @@ export default function ActionButtons() {
             alt="Credit card down icon"
           />
         </div>
-        <span className="font-medium text-sm capitalize"> Add cash</span>
+        <span className="font-medium text-xs md:text-sm capitalize">
+          Add cash
+        </span>
       </button>
 
       <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white rounded-[10px] py-3 transition-colors duration-200 backdrop-blur-sm">
@@ -24,7 +26,9 @@ export default function ActionButtons() {
             alt="Credit card up icon"
           />
         </div>
-        <span className="font-medium text-sm capitalize"> Cash out</span>
+        <span className="font-medium text-xs md:text-sm capitalize">
+          Cash out
+        </span>
       </button>
     </div>
   );

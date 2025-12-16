@@ -5,7 +5,7 @@ import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
-    <header className="relative py-6 bg-black rounded-tl-[35px] rounded-tr-[35px] lg:h-[250px] overflow-hidden header-glow">
+    <header className=" fixed top-0 left-0 right-0 py-6 bg-black rounded-t-[35px] lg:h-[250px] overflow-hidden header-glow z-50">
       {/* div pour l'image de fond avec rotation */}
       <div
         className="absolute inset-0 bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat transform rotate-x-180"
