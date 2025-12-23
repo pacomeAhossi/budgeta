@@ -1,7 +1,5 @@
 "use client";
 
-import { log } from "console";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type NavItem = {
@@ -23,8 +21,6 @@ export default function Navigation() {
       const sections = navItems.map((item) => item.href.replace("#", ""));
 
       for (const sectionId of sections) {
-        console.log(sectionId);
-
         const element = document.getElementById(sectionId);
 
         if (element) {

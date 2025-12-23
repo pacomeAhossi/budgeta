@@ -5,8 +5,14 @@ import PhoneDownload from "../ui/PhoneDownload";
 
 export default function PhonesStack() {
   // Référence pour chaque animation de phone
-  const phone1Reveal = useScrollReveal({ threshold: 0.1, delay: 0 });
-  const phone2Reveal = useScrollReveal({ threshold: 0.1, delay: 200 });
+  const phone1Reveal = useScrollReveal<HTMLDivElement>({
+    threshold: 0.1,
+    delay: 0,
+  });
+  const phone2Reveal = useScrollReveal<HTMLDivElement>({
+    threshold: 0.1,
+    delay: 200,
+  });
 
   return (
     <div className="hidden relative w-full h-full lg:flex items-center justify-center">
@@ -14,7 +20,7 @@ export default function PhonesStack() {
       <div className="relative w-full max-w-[600px] h-full">
         {/* Phone 1 - Dashboard */}
         <div
-          ref={phone1Reveal.elementRef as any}
+          ref={phone1Reveal.elementRef}
           className={`
             absolute top-1/2 left-0
             ${
@@ -34,7 +40,7 @@ export default function PhonesStack() {
 
         {/* Phone 2 - DETAIL TRANSACTION  */}
         <div
-          ref={phone2Reveal.elementRef as any}
+          ref={phone2Reveal.elementRef}
           className={`
             absolute top-1/2 right-0
             ${

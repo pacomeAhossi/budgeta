@@ -1,6 +1,7 @@
 "use client";
 import { ReactNode } from "react";
 import { useScrollReveal } from "@/app/hooks/useScrollReveal";
+import FeatureBullet from "./FeatureBullet";
 
 type FeatureCardProps = {
   title: string;
@@ -19,10 +20,10 @@ export default function FeatureCard({
   mockupPosition,
   delay = 0,
 }: FeatureCardProps) {
-  const cardReveal = useScrollReveal({ threshold: 0.2, delay });
+  const cardReveal = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay });
   return (
     <div
-      ref={cardReveal.elementRef as any}
+      ref={cardReveal.elementRef}
       className={`bg-beige rounded-3xl mb-[40px] p-8 lg:px-[60px] lg:py-[102px] ${
         cardReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
       } `}
@@ -57,27 +58,14 @@ export default function FeatureCard({
 
           {/* Bullet points avec badges en vert  */}
           <ul className="space-y-3">
-            {bulletPoints.map((bullet_item, index) => {
-              // Hook pour chaque bullet avec délai progressif
-              const bulletReveal = useScrollReveal({
-                threshold: 0.1,
-                delay: delay + 300 + index * 100,
-              });
-
-              return (
-                <li ref={bulletReveal.elementRef as any} key={index}>
-                  <span
-                    className={` inline-block text-[11px] lg:text-base  bg-budgeta-green text-black px-4 py-2 font-semibold rounded-full ${
-                      bulletReveal.isVisible
-                        ? "reveal-right-visible reveal-slow "
-                        : "reveal-right-hidden"
-                    } `}
-                  >
-                    {bullet_item}
-                  </span>
-                </li>
-              );
-            })}
+            {bulletPoints.map((bullet_item, index) => (
+              // Composant FeatureBullet pour l'affichage des bullets points avec AOS
+              <FeatureBullet
+                key={index}
+                bulletText={bullet_item}
+                delay={delay + 300 + index * 100}
+              />
+            ))}
           </ul>
         </div>
       </div>

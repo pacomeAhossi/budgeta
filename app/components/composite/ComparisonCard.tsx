@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
 import sadIcon from "@/public/assets/icons/sad-icon.svg";
 import smileyIcon from "@/public/assets/icons/smiley-icon.svg";
 import Button from "../ui/Button";
-import { useScrollReveal } from "@/app/hooks/useScrollReveal";
+import ComparisonItem from "./ComparisonItem";
 
 type ComparisonCardProps = {
   title: string;
@@ -35,37 +34,17 @@ export default function ComparisonCard({
 
       {/* Liste  */}
       <ul className={`rounded-xl p-4 border-[1px] ${borderColor} `}>
-        {items.map((item, index) => {
-          const itemReveal = useScrollReveal({
-            threshold: 0.1,
-            delay: variant === "before" ? 0 : 200,
-          });
-          return (
-            <li
-              key={index}
-              ref={itemReveal.elementRef as any}
-              className={`py-4 flex items-center gap-3 border-b last:border-0 ${borderColor} ${
-                itemReveal.isVisible
-                  ? "reveal-left-visible reveal-slow"
-                  : "reveal-left-hidden"
-              } `}
-            >
-              <div className="w-6 h-6">
-                <Image
-                  src={icon}
-                  width={27}
-                  height={27}
-                  alt={`${variant === "before" ? "Sad icon" : "Smiley icon"} `}
-                />
-              </div>
-              <span
-                className={`text-sm lg:text-lg font-medium ${itemTextColor}`}
-              >
-                {item}
-              </span>
-            </li>
-          );
-        })}
+        {items.map((item, index) => (
+          <ComparisonItem
+            key={index}
+            item={item}
+            icon={icon}
+            borderColor={borderColor}
+            textColor={textColor}
+            delay={variant === "before" ? 0 : index * 150}
+            variant="before"
+          />
+        ))}
       </ul>
 
       {/* CTA uniquement si variant === 'after' */}

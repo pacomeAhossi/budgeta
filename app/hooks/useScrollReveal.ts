@@ -8,12 +8,12 @@ type ScrollRevealOptions = {
   rootMargin?: string;
 };
 
-export function useScrollReveal({
+export function useScrollReveal<T extends HTMLElement = HTMLElement>({
   threshold = 0.1,
   delay = 0,
   rootMargin = "0px",
 }: ScrollRevealOptions = {}) {
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

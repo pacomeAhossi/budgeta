@@ -23,7 +23,7 @@ export default function ReviewCard({
       <p
         className={`border ${borderColor} p-4 mb-6 text-black text-sm md:text-base lg:text-[1.125rem] rounded-[9px]`}
       >
-        "{text}"
+        &quot;{text}&quot;
       </p>
       {/* Avatar, nom et rôle */}
       <div

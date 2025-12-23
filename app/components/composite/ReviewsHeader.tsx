@@ -12,13 +12,22 @@ export default function ReviewsHeader({
   title,
   description,
 }: ReviewsHeaderProps) {
-  const badgeReveal = useScrollReveal({ threshold: 0.2, delay: 0 });
-  const titleReveal = useScrollReveal({ threshold: 0.2, delay: 100 });
-  const descriptionReveal = useScrollReveal({ threshold: 0.2, delay: 200 });
+  const badgeReveal = useScrollReveal<HTMLSpanElement>({
+    threshold: 0.2,
+    delay: 0,
+  });
+  const titleReveal = useScrollReveal<HTMLHeadingElement>({
+    threshold: 0.2,
+    delay: 100,
+  });
+  const descriptionReveal = useScrollReveal<HTMLParagraphElement>({
+    threshold: 0.2,
+    delay: 200,
+  });
   return (
     <div className="text-center  mx-auto space-y-4 ">
       <span
-        ref={badgeReveal.elementRef as any}
+        ref={badgeReveal.elementRef}
         className={`inline-block text-xs lg:text-lg px-4 py-2 text-dark uppercase font-medium tracking-widest bg-[#F5F5F5] rounded-full ${
           badgeReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
         } `}
@@ -26,7 +35,7 @@ export default function ReviewsHeader({
         {badge}
       </span>
       <h2
-        ref={titleReveal.elementRef as any}
+        ref={titleReveal.elementRef}
         className={`text-2xl md:text-3xl lg:text-[3.5rem] lg:py-2 text-black capitalize font-bold ${
           titleReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
         }`}
@@ -34,7 +43,7 @@ export default function ReviewsHeader({
         {title}
       </h2>
       <p
-        ref={descriptionReveal.elementRef as any}
+        ref={descriptionReveal.elementRef}
         className={`text-sm lg:text-xl font-medium text-budgeta-gray ${
           descriptionReveal.isVisible
             ? "reveal-scale-visible reveal-slow"

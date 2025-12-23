@@ -6,7 +6,7 @@ import Button from "../components/ui/Button";
 import { useParallax } from "../hooks/useParallax";
 
 export default function Hero() {
-  const phoneRef = useParallax({ speed: 0.3, disableOnMobile: true });
+  // const phoneRef = useParallax({ speed: 0.3, disableOnMobile: true });
 
   return (
     <section className="">
@@ -23,7 +23,10 @@ export default function Hero() {
 
           {/* Bouton CTA avec icône */}
           <div className="flex justify-center">
-            <Button className="flex gap-2 items-center px-3 py-3 capitalize hover:bg-budgeta-green/90 hover:gap-3 transition-all duration-300 group">
+            <Button
+              href="#download"
+              className="flex gap-2 items-center px-3 py-3 capitalize hover:bg-budgeta-green/90 hover:gap-3 transition-all duration-300 group"
+            >
               Get free now
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 <Image
@@ -43,7 +46,7 @@ export default function Hero() {
           id="phone-mockup"
         >
           {/* div pour l'image de fond avec rotation */}
-          {/* <div className="absolute w-full bottom-[50%] h-[200px] bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat" /> */}
+          {/* <div className="absolute w-full bottom-[30%] h-[200px] bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat" /> */}
           <PhoneMockup />
         </div>
       </div>

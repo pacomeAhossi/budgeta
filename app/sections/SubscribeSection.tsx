@@ -24,7 +24,7 @@ export default function SubscribeSection() {
 
       setMessage("✓ Subscribed successfully!");
       setEmail("");
-    } catch (error) {
+    } catch (_error) {
       setMessage("✗ Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);

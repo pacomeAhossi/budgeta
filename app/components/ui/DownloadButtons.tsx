@@ -2,10 +2,13 @@ import { useScrollReveal } from "@/app/hooks/useScrollReveal";
 import { FaApple, FaGoogle } from "react-icons/fa";
 
 export default function DownloadButtons() {
-  const buttonsReveal = useScrollReveal({ threshold: 0.2, delay: 300 });
+  const buttonsReveal = useScrollReveal<HTMLDivElement>({
+    threshold: 0.2,
+    delay: 300,
+  });
   return (
     <div
-      ref={buttonsReveal.elementRef as any}
+      ref={buttonsReveal.elementRef}
       className={`flex flex-wrap items-center justify-center gap-4 pt-4 lg:pt-0 ${
         buttonsReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
       }`}
