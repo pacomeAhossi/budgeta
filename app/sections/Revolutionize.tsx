@@ -30,7 +30,7 @@ export default function Revolutionize() {
   ];
 
   return (
-    <section className="relative py-[7.5rem] z-30 -mt-[64px]  rounded-[3rem] bg-dark">
+    <section className="relative py-[3.75rem] lg:py-[7.5rem] z-30 -mt-[64px]  rounded-[3rem] bg-dark">
       <div className="container mx-auto px-6 lg:px-16  ">
         <RevolutionizeHeader
           badge="Revolutionize"

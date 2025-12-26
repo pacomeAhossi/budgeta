@@ -41,7 +41,7 @@ export default function ComparisonCard({
             icon={icon}
             borderColor={borderColor}
             textColor={textColor}
-            delay={variant === "before" ? 0 : index * 150}
+            delay={variant === "before" ? 0 : 200}
             variant="before"
           />
         ))}

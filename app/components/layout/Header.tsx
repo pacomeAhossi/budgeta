@@ -1,11 +1,29 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Logo from "../brand/Logo";
 import Navigation from "../headerLink/Navigation";
 import Button from "../ui/Button";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleRoundedHeader = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleRoundedHeader);
+    return () => window.removeEventListener("scroll", handleRoundedHeader);
+  }, []);
+
   return (
-    <header className=" fixed top-0 left-0 right-0 py-6 bg-black rounded-t-[35px] lg:h-[250px] overflow-hidden header-glow z-50">
+    <header
+      className={`fixed top-0 left-0 right-0 py-6 bg-black lg:h-[250px] overflow-hidden header-glow z-50 ${
+        isScrolled ? "" : "rounded-t-[35px]"
+      } `}
+    >
       {/* div pour l'image de fond avec rotation */}
       <div
         className="absolute inset-0 bg-[url('/vector-footer.svg')] bg-cover bg-no-repeat transform rotate-x-180"

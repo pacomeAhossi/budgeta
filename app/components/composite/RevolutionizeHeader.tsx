@@ -14,7 +14,7 @@ export default function RevolutionizeHeader({
 }: RevolutionizeHeader) {
   return (
     <div className="text-center space-y-4 mb-2 lg:mb-[60px] ">
-      <span className="inline-block text-xs text-white px-4 py-2 uppercase font-medium tracking-widest bg-[#0D0D0D] rounded-full">
+      <span className="inline-block text-xs lg:text-lg text-white px-4 py-2 uppercase font-medium bg-[#0D0D0D] rounded-full">
         {badge}
       </span>
 

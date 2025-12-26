@@ -28,7 +28,7 @@ export default function ReviewsHeader({
     <div className="text-center  mx-auto space-y-4 ">
       <span
         ref={badgeReveal.elementRef}
-        className={`inline-block text-xs lg:text-lg px-4 py-2 text-dark uppercase font-medium tracking-widest bg-[#F5F5F5] rounded-full ${
+        className={`inline-block text-xs lg:text-lg px-4 py-2 text-dark uppercase font-medium bg-[#F5F5F5] rounded-full ${
           badgeReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
         } `}
       >

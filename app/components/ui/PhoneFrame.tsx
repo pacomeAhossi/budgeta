@@ -10,7 +10,7 @@ export default function PhoneFrame({
       {/* Cadre du téléphone avec bordure lumineuse */}
       <div
         className="relative rounded-[3rem] bg-gradient-to-br from-cyan-500/20 via-blue-500/20
-                to-cyan-500/20 p-[3px] "
+                to-cyan-500/20 p-[3px] border border-[#8EADC1] "
       >
         {/* Fond noir du téléphone */}
         <div className="relative rounded-[2.85rem] bg-[#1a1a1a] overflow-hidden h-[500px] md:h-[550px]">
@@ -29,7 +29,7 @@ export default function PhoneFrame({
       </div>
 
       {/* Effet lueur */}
-      <div className="absolute inset-0 -z-10 blur-xl opacity-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-cyan-400" />
+      {/* <div className="absolute inset-0 -z-10 blur-xl opacity-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-cyan-400" /> */}
     </div>
   );
 }

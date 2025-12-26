@@ -51,7 +51,9 @@ export default function FeatureCard({
               : "lg:col-start-2"
           }`}
         >
-          <h3 className="text-2xl lg:text-3xl font-bold capitalize">{title}</h3>
+          <h3 className="text-2xl lg:text-3xl text-black font-bold capitalize">
+            {title}
+          </h3>
           <p className="text-black text-base lg:text-xl leading-relaxed font-semibold">
             {description}
           </p>

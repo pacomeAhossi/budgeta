@@ -5,7 +5,7 @@ import TransactionList from "../components/composite/TransactionList";
 import PhoneMockup from "../components/composite/PhoneMockup";
 export default function Features() {
   return (
-    <section className="relative z-30 bg-white -mt-32 lg:-mt-40  rounded-[3rem] pt-20 pb-20 lg:pb-24">
+    <section className="relative z-30 bg-white -mt-32 lg:-mt-40  rounded-[3rem] pt-[2.5rem] lg:pt-20 pb-20 lg:pb-24">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Header */}
         <FeaturesHeader
@@ -53,7 +53,7 @@ export default function Features() {
           ]}
           mockup={<PhoneMockup />}
           mockupPosition="right"
-          delay={400}
+          delay={300}
         />
       </div>
     </section>

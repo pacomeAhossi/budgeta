@@ -28,7 +28,7 @@ export default function FeaturesHeader({
     <div className="text-center mb-[60px] maw-w-2xl mx-auto space-y-4 ">
       <span
         ref={badgeReveal.elementRef}
-        className={`inline-block text-xs uppercase text-black bg-budgeta-gray/30 px-2 py-1 rounded-full tracking-widest font-semibold ${
+        className={`inline-block text-xs lg:text-lg px-4 py-2 uppercase text-dark bg-[#F5F5F5] rounded-full font-semibold ${
           badgeReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
         } `}
       >
@@ -36,7 +36,7 @@ export default function FeaturesHeader({
       </span>
       <h2
         ref={titleReveal.elementRef}
-        className={`text-3xl md:4xl lg:5xl font-bold capitalize ${
+        className={`text-2xl text-black md:4xl lg:5xl font-bold capitalize ${
           titleReveal.isVisible ? "reveal-visible reveal-slow" : "reveal-hidden"
         } `}
       >
